@@ -41,15 +41,12 @@ class Hero extends React.Component {
     }
 
     onUserChosen() {
-
+        this.setState({userChosen: ""})
     }
 
     renderProfiles(user, i){
         if (this.state.filter) {
-            return <li key={i} onClick={e => this.setUserChosen(e) } data-id={user.id}> { user.name }
-                 {/*key={i} onClick={this.setUserChosen.bind(this)}>*/}
-                {/*<NavLink exact activeClassName="active" to={`/users/${user.id}`} >{ user.name }</NavLink>*/}
-            </li>
+            return <li key={i} onClick={e => this.setUserChosen(e) } data-id={user.id}> { user.name } </li>
         }
 
     }
@@ -75,7 +72,7 @@ class Hero extends React.Component {
                         {this.state.filteredData.map( this.renderProfiles.bind(this) )}
                     </ul>
                     <div className="btn-container">
-                        <NavLink className="btn" exact to={`/users/${this.state.userChosenId}`}>Show</NavLink>
+                        <NavLink className="btn" exact to={`/users/${this.state.userChosenId}`} onClick={this.onUserChosen.bind(this)}>Show</NavLink>
                     </div>
                 </div>
 
