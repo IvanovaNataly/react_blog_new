@@ -16,10 +16,6 @@ const state = {
             details: null,
             posts: null
         }
-    },
-    friendsList: {
-        friendsIds: [],
-        friendsObjects: []
     }
 };
 

@@ -2,8 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import UserDetails from "./UserDetails";
 import UserPosts from "./UserPosts";
-import Notification from "../../../notifications/Notification";
-import {getUser, addToFriends} from "../../../actions/creators";
+import {getUser} from "../../../actions/creators";
 
 import "./user-page.scss";
 
@@ -17,7 +16,7 @@ class UserPage extends React.Component {
         }
     }
 
-    componentWillReceiveProps( {match, friendsIds} ){
+    componentWillReceiveProps( {match} ){
         if( match.params.id &&  match.params.id != this.props.match.params.id){
             this.props.getUser(match.params.id);
         }
@@ -38,15 +37,13 @@ function mapStateToProps(state){
     return {
         isLoading: state.friends.selectedUser.isLoading,
         user: state.friends.selectedUser.details,
-        posts: state.friends.selectedUser.posts,
-        friendsIds: state.friendsList.friendsIds
+        posts: state.friends.selectedUser.posts
     }
 }
 
 function mapDispatchToProps(dispatch){
     return {
-        getUser: id => dispatch( getUser(id) ),
-        addToFriends: id => dispatch( addToFriends(id) )
+        getUser: id => dispatch( getUser(id) )
     }
 }
 

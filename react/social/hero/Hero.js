@@ -34,8 +34,10 @@ class Hero extends React.Component {
     // }
 
     setUserChosen(e) {
-        this.setState( {userChosen: e.target.text,
-                        filteredData: []} )
+        this.setState( {userChosen: e.target.textContent,
+                        userChosenId: e.target.dataset.id,
+                        filteredData: []} );
+        console.log(this.state.userChosenId)
     }
 
     onUserChosen() {
@@ -44,9 +46,9 @@ class Hero extends React.Component {
 
     renderProfiles(user, i){
         if (this.state.filter) {
-            return <li key={i} onClick={this.setUserChosen.bind(this)}>
-                 {/*key={i} onClick={this.setUserChosen.bind(this)}>{ user.name }*/}
-                <NavLink exact activeClassName="active" to={`/users/${user.id}`} >{ user.name }</NavLink>
+            return <li key={i} onClick={e => this.setUserChosen(e) } data-id={user.id}> { user.name }
+                 {/*key={i} onClick={this.setUserChosen.bind(this)}>*/}
+                {/*<NavLink exact activeClassName="active" to={`/users/${user.id}`} >{ user.name }</NavLink>*/}
             </li>
         }
 
@@ -73,7 +75,7 @@ class Hero extends React.Component {
                         {this.state.filteredData.map( this.renderProfiles.bind(this) )}
                     </ul>
                     <div className="btn-container">
-                        <button className="btn" onClick={this.onUserChosen.bind(this)}>Show</button>
+                        <NavLink className="btn" exact to={`/users/${this.state.userChosenId}`}>Show</NavLink>
                     </div>
                 </div>
 

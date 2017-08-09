@@ -41,29 +41,4 @@ export function getUser(id, usersService = UsersService, postsService=PostsServi
     }
 }
 
-export function getFriendsList(){
-    return dispatch => {
-        UsersService.getAllUsers()
-            .then( users => {
-                let numbers = FriendsService.get() ;
-                let friendsList = [];
-                users.filter(user => {
-
-                    if (numbers.includes(user.id)) {
-                        friendsList.push(user);
-                    }
-                    dispatch({type: ACTIONS.GET_FRIENDS_LIST_RESPONSE, friends: friendsList})
-                })
-            })
-    }
-}
-
-export function addToFriends(id) {
-    return( { type: ACTIONS.ADD_TO_FRIENDS, id} )
-}
-
-export function removeFriend(id) {
-    return( { type: ACTIONS.REMOVE_FRIEND, id })
-}
-
 
