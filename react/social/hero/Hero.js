@@ -46,7 +46,7 @@ class Hero extends React.Component {
         if (this.state.filter) {
             return <li key={i} onClick={this.setUserChosen.bind(this)}>
                  {/*key={i} onClick={this.setUserChosen.bind(this)}>{ user.name }*/}
-                <NavLink exact activeClassName="active" to="/users/2" >{ user.name }</NavLink>
+                <NavLink exact activeClassName="active" to={`/users/${user.id}`} >{ user.name }</NavLink>
             </li>
         }
 
