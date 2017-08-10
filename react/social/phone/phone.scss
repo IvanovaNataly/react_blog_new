@@ -1,19 +1,43 @@
 @import "../../colors";
 
+
+.phone-container {
+  width: 100%;
+  height: 100vh;
+  padding: 100px 40px 0 40px;
+  background: $netcraftBckg;
+  position: absolute;
+  top: 0;
+}
+
 .phone,
 .fax {
   font-size: 23px;
-
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 2% 75%;
-  background-size: auto;
+  background-position: 0% 61%;
+  background-size: 37px;
   margin-top: 35px;
   padding-left: 60px;
   max-width: 90%;
   max-height: 100%;
+
+    label {
+      display: block;
+      color: $netcraftColor;
+      font-weight: 400;
+      line-height: 1.5em;
+    }
+
+    .telephone,
+    .faxNumber {
+      font-weight: 400;
+      margin-top: 3px;
+      display: inline-block;
+    }
+
 }
 
 .phone {
