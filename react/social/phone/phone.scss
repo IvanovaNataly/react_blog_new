@@ -3,7 +3,7 @@
 .phone,
 .fax {
   font-size: 23px;
-  background: $background url(../../lg-phone-icon.jpg);
+
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -14,4 +14,12 @@
   padding-left: 60px;
   max-width: 90%;
   max-height: 100%;
+}
+
+.phone {
+  background-image: url(../../lg-phone-icon.jpg);
+}
+
+.fax {
+  background-image: url(../../lg-fax-icon.jpg);
 }
