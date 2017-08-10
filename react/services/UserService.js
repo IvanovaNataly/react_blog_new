@@ -1,4 +1,3 @@
-let $ = require("jquery");
 
 class UserService{
 
@@ -7,15 +6,12 @@ class UserService{
     }
 
     getAllUsers(){
-        return fetch("../../twitter.json")
+        return fetch("../../users-list.json")
             .then(response => response.json())
-
-        //return $.get(this.url);
     }
 
     getUser(id){
-        //return $.get(this.url + 2)
-        return fetch("../../twitter.json")
+        return fetch("../../users-list.json")
            .then(response => response.json())
             .then(users => {
                 return users.find(user => {

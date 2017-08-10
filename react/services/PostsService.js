@@ -9,7 +9,7 @@ class PostsService{
     getPosts(userId){
         //return $.get(this.url + userId);
 
-        return fetch("../../twits.json")
+        return fetch("../../user-twits.json")
             .then(response => response.json())
             .then(posts => {
                 return posts.filter(post => {

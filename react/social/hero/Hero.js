@@ -24,8 +24,8 @@ class Hero extends React.Component {
 
     renderProfiles(user, i){
         if (this.state.filter) {
-            return <li key={i} onClick={e => this.setUserChosen(e) } data-id={user.id}>
-                        <span className="search-item">
+            return <li key={i} onClick={e => this.setUserChosen(e) } >
+                        <span className="search-item" data-id={user.id}>
                             { user.name }
                         </span>
                 </li>

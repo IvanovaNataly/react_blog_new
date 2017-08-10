@@ -2,14 +2,14 @@ import React from "react";
 
 export default class UserPosts extends React.Component{
 
-    renderPost( {user, text, created}, index ){
+    renderPost( {user, text, created_at}, index ){
         return (<li key={ index } className="twit">
             <a href="">
-                <img className="avatar" src={user.profile_background_image_url} alt={user.name}/>
+                <img className="avatar" src={user.profile_image_url} alt={user.name}/>
                 <span className=" twit-head-el fullname">{user.name}</span>
                 <span className="twit-head-el user-badge">{`@${user.screen_name}`}</span>
             </a>
-            <span className="twit-head-el time">{created.split(" +", 1)}</span>
+            <span className="twit-head-el time">{created_at.split(" +", 1)}</span>
             <p className="post">{text}</p>
 
         </li>)
