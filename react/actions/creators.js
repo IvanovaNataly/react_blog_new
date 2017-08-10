@@ -1,23 +1,7 @@
 import * as ACTIONS from "./index";
 import UsersService from "../services/UserService";
 import PostsService from "../services/PostsService";
-import FriendsService from "../services/FriendsService";
 
-export function addUser(user){
-    return { type: ACTIONS.ADD_USER, user };
-}
-
-export function removeUser(user){
-    return { type: ACTIONS.REMOVE_USER, user };
-}
-
-export function logIn(user){
-    return { type: ACTIONS.LOG_IN, user};
-}
-
-export function logOut(){
-    return { type: ACTIONS.LOG_OUT };
-}
 
 export function setPosts(posts){
     return { type: ACTIONS.SET_POSTS, posts };

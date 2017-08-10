@@ -1,6 +1,5 @@
 import {createStore, applyMiddleware} from "redux";
 import appReducers from "./reducers";
-import LoginService from "./services/LoginService";
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -8,7 +7,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from "redux-thunk";
 
 const state = {
-    loggedInUser: LoginService.get(),
     friends: {
         isLoading: false,
         usersList: [],

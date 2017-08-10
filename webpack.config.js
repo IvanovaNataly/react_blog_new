@@ -41,12 +41,6 @@ module.exports = {
                         name: "[name]-[hash].[ext]"
                     }
                 },
-            },
-            {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                use: [
-                    'img-loader'
-                ]
             }
         ]
     },

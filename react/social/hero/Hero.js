@@ -1,12 +1,7 @@
 
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {withRouter} from "react-router";
 import {connect} from "react-redux";
-import {logOut} from "../../actions/creators";
-import LoginService from "../../services/LoginService";
-import Moment from 'react-moment';
-import moment  from 'moment';
 
 import "./hero.scss";
 
@@ -16,28 +11,11 @@ class Hero extends React.Component {
         this.state = {  filter: "",
                         filteredData: []}
     }
-    //
-    // componentWillMount() {
-    //     fetch("../../twitter.json")
-    //         .then((response) => {return response.json()})
-    //         .then((data) => { console.log(data); this.setState({data: data,
-    //             filteredData: data}) })
-    // }
-    //
-
-
-    // setUserChosen(chosenId) {
-    //     let chosenUser = this.state.data.find( function(element) {
-    //         return element.id === chosenId
-    //     } )
-    //     this.props.updateUser(chosenUser);
-    // }
 
     setUserChosen(e) {
         this.setState( {userChosen: e.target.textContent,
                         userChosenId: e.target.dataset.id,
                         filteredData: []} );
-        console.log(this.state.userChosenId)
     }
 
     onUserChosen() {
